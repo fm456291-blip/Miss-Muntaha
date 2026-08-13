@@ -1,6 +1,16 @@
+// ==========================================
+// PAGE 3 — BIRTHDAY DUAS & WISHES
+// MISS MUNTAHA 🌷
+// ==========================================
+
 document.addEventListener("DOMContentLoaded", function () {
 
     console.log("PAGE 3 JS LOADED");
+
+
+    // ==========================================
+    // ELEMENTS
+    // ==========================================
 
     const openLetterBtn = document.getElementById("openLetter");
     const letter = document.getElementById("letter");
@@ -22,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ==========================================
-    // FLOWERS
+    // FLOATING FLOWERS
     // ==========================================
 
     if (flowers) {
@@ -97,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ==========================================
-    // OPEN DUA LETTER
+    // OPEN BIRTHDAY DUAS
     // ==========================================
 
     if (openLetterBtn && letter) {
@@ -110,26 +120,35 @@ document.addEventListener("DOMContentLoaded", function () {
             // Start music
             if (music) {
 
-                music.play().catch(function (error) {
+                music.play()
+                    .then(function () {
 
-                    console.log("Music blocked:", error);
+                        console.log("MUSIC PLAYING");
 
-                });
+                    })
+                    .catch(function (error) {
+
+                        console.log("Music error:", error);
+
+                    });
 
             }
 
 
             // Hide button
             openLetterBtn.style.opacity = "0";
-            openLetterBtn.style.transform = "scale(0.8)";
+
+            openLetterBtn.style.transform =
+                "scale(0.8)";
 
 
             setTimeout(function () {
 
-                openLetterBtn.style.display = "none";
+                openLetterBtn.style.display =
+                    "none";
 
 
-                // SHOW LETTER
+                // Show letter
                 letter.classList.remove("hidden");
 
                 console.log("LETTER OPENED");
@@ -155,42 +174,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     } else {
 
-        console.log("BUTTON OR LETTER NOT FOUND");
+        console.log(
+            "ERROR: openLetter button or letter not found"
+        );
 
     }
 
 
     // ==========================================
-    // ENDING MESSAGE
+    // FINAL MESSAGE
     // ==========================================
 
     if (letter && ending) {
 
-        const observer = new IntersectionObserver(
+        const observer =
+            new IntersectionObserver(
 
-            function (entries) {
+                function (entries) {
 
-                entries.forEach(function (entry) {
+                    entries.forEach(function (entry) {
 
-                    if (entry.isIntersecting) {
+                        if (entry.isIntersecting) {
 
-                        setTimeout(function () {
+                            setTimeout(function () {
 
-                            ending.classList.remove("hidden");
+                                ending.classList.remove(
+                                    "hidden"
+                                );
 
-                        }, 1800);
+                            }, 1800);
 
-                    }
+                        }
 
-                });
+                    });
 
-            },
+                },
 
-            {
-                threshold: 0.35
-            }
+                {
+                    threshold: 0.35
+                }
 
-        );
+            );
+
 
         observer.observe(letter);
 
