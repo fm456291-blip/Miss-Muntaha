@@ -5,23 +5,14 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const openLetterBtn =
-        document.getElementById("openLetter");
+    const openLetterBtn = document.getElementById("openLetter");
+    const letter = document.getElementById("letter");
+    const ending = document.getElementById("ending");
 
-    const letter =
-        document.getElementById("letter");
+    const music = document.getElementById("birthdayMusic");
 
-    const ending =
-        document.getElementById("ending");
-
-    const music =
-        document.getElementById("birthdayMusic");
-
-    const flowers =
-        document.getElementById("flowers");
-
-    const sparkles =
-        document.getElementById("sparkles");
+    const flowers = document.getElementById("flowers");
+    const sparkles = document.getElementById("sparkles");
 
 
     // ==========================================
@@ -32,21 +23,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
         music.volume = 0.35;
 
-        // Music starts after first interaction
-        document.addEventListener(
-            "click",
-            function startMusic() {
+        // Try autoplay
+        music.play().catch(() => {
+            console.log("Waiting for user interaction...");
+        });
+
+        // If browser blocks autoplay,
+        // start music on first user interaction
+        const startMusic = () => {
+
+            if (music.paused) {
 
                 music.play().catch(() => {});
 
-                document.removeEventListener(
-                    "click",
-                    startMusic
-                );
+            }
 
-            },
-            { once: true }
-        );
+        };
+
+        document.addEventListener("click", startMusic, {
+            once: true
+        });
+
+        document.addEventListener("touchstart", startMusic, {
+            once: true
+        });
 
     }
 
@@ -65,39 +65,30 @@ document.addEventListener("DOMContentLoaded", function () {
             "♡"
         ];
 
-
         for (let i = 0; i < 30; i++) {
 
-            const flower =
-                document.createElement("div");
+            const flower = document.createElement("div");
 
-            flower.className =
-                "flower";
+            flower.className = "flower";
 
             flower.innerHTML =
                 flowerSymbols[
                     Math.floor(
-                        Math.random() *
-                        flowerSymbols.length
+                        Math.random() * flowerSymbols.length
                     )
                 ];
-
 
             flower.style.left =
                 Math.random() * 100 + "%";
 
-
             flower.style.fontSize =
                 (12 + Math.random() * 20) + "px";
-
 
             flower.style.animationDuration =
                 (8 + Math.random() * 10) + "s";
 
-
             flower.style.animationDelay =
                 Math.random() * 10 + "s";
-
 
             flowers.appendChild(flower);
 
@@ -114,24 +105,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < 70; i++) {
 
-            const sparkle =
-                document.createElement("div");
+            const sparkle = document.createElement("div");
 
-            sparkle.className =
-                "sparkle";
-
+            sparkle.className = "sparkle";
 
             sparkle.style.left =
                 Math.random() * 100 + "%";
 
-
             sparkle.style.top =
                 Math.random() * 100 + "%";
 
-
             sparkle.style.animationDelay =
                 Math.random() * 3 + "s";
-
 
             sparkles.appendChild(sparkle);
 
@@ -146,35 +131,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (openLetterBtn) {
 
-        openLetterBtn.addEventListener(
-            "click",
-            function () {
+        openLetterBtn.addEventListener("click", function () {
 
-                // Start music
-                if (music) {
+            // Make absolutely sure music starts
+            if (music) {
 
-                    music.play().catch(() => {});
+                music.volume = 0.35;
 
-                }
+                music.play().catch(() => {});
 
-
-                // Hide button
-                openLetterBtn.style.opacity = "0";
-
-                openLetterBtn.style.transform =
-                    "scale(.8)";
+            }
 
 
-                setTimeout(function () {
+            // Hide button smoothly
+            openLetterBtn.style.opacity = "0";
 
-                    openLetterBtn.style.display =
-                        "none";
+            openLetterBtn.style.transform = "scale(.8)";
 
 
-                    // Show letter
-                    letter.classList.remove(
-                        "hidden"
-                    );
+            setTimeout(function () {
+
+                openLetterBtn.style.display = "none";
+
+
+                // Show letter
+                if (letter) {
+
+                    letter.classList.remove("hidden");
 
 
                     // Scroll to letter
@@ -190,11 +173,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     }, 200);
 
+                }
 
-                }, 350);
+            }, 350);
 
-            }
-        );
+        });
 
     }
 
@@ -231,7 +214,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             );
 
-
         observer.observe(letter);
 
     }
@@ -243,7 +225,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const photos =
         document.querySelectorAll(".polaroid");
-
 
     photos.forEach(function (photo, index) {
 
