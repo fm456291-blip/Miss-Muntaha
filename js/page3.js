@@ -3,9 +3,7 @@
 // MISS MUNTAHA 🌷
 // ==========================================
 
-
 document.addEventListener("DOMContentLoaded", function () {
-
 
     // ==========================================
     // ELEMENTS
@@ -31,25 +29,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ==========================================
-    // BACKGROUND MUSIC
+    // MUSIC
     // ==========================================
 
     if (music) {
 
         music.volume = 0.35;
 
-
-        function startMusic() {
-
-            music.play().catch(function () {});
-
-        }
-
-
         document.addEventListener(
             "click",
-            startMusic,
-            { once: true }
+            function startMusic() {
+
+                music.play().catch(function () {});
+
+            },
+            {
+                once: true
+            }
         );
 
     }
@@ -62,26 +58,21 @@ document.addEventListener("DOMContentLoaded", function () {
     if (flowers) {
 
         const flowerSymbols = [
-
             "🌷",
             "🌸",
             "✿",
             "❀",
-            "💮",
-            "♡"
-
+            "♡",
+            "💮"
         ];
 
 
         for (let i = 0; i < 35; i++) {
 
-
             const flower =
                 document.createElement("div");
 
-
-            flower.className =
-                "flower";
+            flower.className = "flower";
 
 
             flower.innerHTML =
@@ -106,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             flower.style.animationDelay =
-                Math.random() * 8 + "s";
+                Math.random() * 5 + "s";
 
 
             flowers.appendChild(flower);
@@ -122,9 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (sparkles) {
 
-
         for (let i = 0; i < 70; i++) {
-
 
             const sparkle =
                 document.createElement("div");
@@ -159,7 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (openLetterBtn && letter) {
 
-
         openLetterBtn.addEventListener(
             "click",
             function () {
@@ -168,60 +156,47 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Start music
                 if (music) {
 
-                    music.play().catch(
-                        function () {}
-                    );
+                    music.play().catch(function () {});
 
                 }
 
 
                 // Button animation
-
-                openLetterBtn.style.opacity =
-                    "0";
+                openLetterBtn.style.opacity = "0";
 
                 openLetterBtn.style.transform =
                     "scale(.8)";
 
 
-                setTimeout(
-                    function () {
+                setTimeout(function () {
 
 
-                        // Hide button
-
-                        openLetterBtn.style.display =
-                            "none";
-
-
-                        // Show letter
-
-                        letter.classList.remove(
-                            "hidden"
-                        );
+                    // Hide button
+                    openLetterBtn.style.display =
+                        "none";
 
 
-                        // Scroll to letter
-
-                        setTimeout(
-                            function () {
-
-                                letter.scrollIntoView({
-
-                                    behavior: "smooth",
-
-                                    block: "center"
-
-                                });
-
-                            },
-                            200
-                        );
+                    // Show letter
+                    letter.classList.remove(
+                        "hidden"
+                    );
 
 
-                    },
-                    350
-                );
+                    // Scroll to letter
+                    setTimeout(function () {
+
+                        letter.scrollIntoView({
+
+                            behavior: "smooth",
+
+                            block: "center"
+
+                        });
+
+                    }, 200);
+
+
+                }, 350);
 
             }
         );
@@ -230,43 +205,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ==========================================
-    // SHOW FINAL MESSAGE
+    // FINAL MESSAGE
     // ==========================================
 
     if (letter && ending) {
-
 
         const observer =
             new IntersectionObserver(
 
                 function (entries) {
 
-
                     entries.forEach(
                         function (entry) {
-
 
                             if (
                                 entry.isIntersecting
                             ) {
 
-
                                 setTimeout(
                                     function () {
-
 
                                         ending.classList.remove(
                                             "hidden"
                                         );
 
-
                                     },
                                     1800
-                                );
-
-
-                                observer.unobserve(
-                                    letter
                                 );
 
                             }
@@ -276,11 +240,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 },
 
-
                 {
-
                     threshold: 0.35
-
                 }
 
             );
