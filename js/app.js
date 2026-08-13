@@ -180,3 +180,22 @@ if (startBtn) {
     });
 
 }
+const bgMusic = document.getElementById("bgMusic");
+
+if (bgMusic) {
+
+    bgMusic.volume = 0.35;
+
+    bgMusic.play().catch(() => {
+        console.log("Music will start after user interaction.");
+    });
+
+    document.addEventListener("click", () => {
+
+        if (bgMusic.paused) {
+            bgMusic.play().catch(() => {});
+        }
+
+    }, { once: true });
+
+}
