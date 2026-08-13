@@ -1,22 +1,18 @@
 // ==========================================
-// PAGE 3 — BIRTHDAY LETTER
-// MISS MUNTAHA 🌷
+// PAGE 3 — MISS MUNTAHA BIRTHDAY PAGE
 // ==========================================
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
     const openLetterBtn = document.getElementById("openLetter");
     const letter = document.getElementById("letter");
     const ending = document.getElementById("ending");
-
     const music = document.getElementById("birthdayMusic");
-
     const flowers = document.getElementById("flowers");
     const sparkles = document.getElementById("sparkles");
 
-
     // ==========================================
-    // MUSIC
+    // BACKGROUND MUSIC
     // ==========================================
 
     if (music) {
@@ -24,13 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
         music.volume = 0.35;
 
         // Try autoplay
-        music.play().catch(() => {
-            console.log("Waiting for user interaction...");
-        });
+        music.play().catch(() => {});
 
-        // If browser blocks autoplay,
-        // start music on first user interaction
-        const startMusic = () => {
+        // Start on first interaction if blocked
+        document.addEventListener("click", () => {
 
             if (music.paused) {
 
@@ -38,64 +31,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
-        };
-
-        document.addEventListener("click", startMusic, {
-            once: true
-        });
-
-        document.addEventListener("touchstart", startMusic, {
-            once: true
-        });
+        }, { once: true });
 
     }
 
+    // ==========================================
+    // FLOWERS
+    // ==========================================
 
-    // ==========================================
-    // FLOATING FLOWERS
-    // ==========================================
+    const flowerIcons = [
+        "🌷",
+        "🌸",
+        "❀",
+        "✿",
+        "💮",
+        "♡"
+    ];
 
     if (flowers) {
 
-        const flowerSymbols = [
-            "🌷",
-            "🌸",
-            "✿",
-            "❀",
-            "♡"
-        ];
-
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 35; i++) {
 
             const flower = document.createElement("div");
 
             flower.className = "flower";
 
             flower.innerHTML =
-                flowerSymbols[
-                    Math.floor(
-                        Math.random() * flowerSymbols.length
-                    )
+                flowerIcons[
+                    Math.floor(Math.random() * flowerIcons.length)
                 ];
 
-            flower.style.left =
-                Math.random() * 100 + "%";
+            flower.style.left = Math.random() * 100 + "%";
 
             flower.style.fontSize =
-                (12 + Math.random() * 20) + "px";
+                (15 + Math.random() * 15) + "px";
 
             flower.style.animationDuration =
-                (8 + Math.random() * 10) + "s";
+                (8 + Math.random() * 8) + "s";
 
             flower.style.animationDelay =
-                Math.random() * 10 + "s";
+                Math.random() * 5 + "s";
 
             flowers.appendChild(flower);
 
         }
 
     }
-
 
     // ==========================================
     // SPARKLES
@@ -124,56 +105,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
     // ==========================================
     // OPEN LETTER
     // ==========================================
 
     if (openLetterBtn) {
 
-        openLetterBtn.addEventListener("click", function () {
+        openLetterBtn.addEventListener("click", () => {
 
-            // Make absolutely sure music starts
-            if (music) {
-
-                music.volume = 0.35;
+            // Music
+            if (music && music.paused) {
 
                 music.play().catch(() => {});
 
             }
 
-
-            // Hide button smoothly
+            // Hide Button
             openLetterBtn.style.opacity = "0";
-
             openLetterBtn.style.transform = "scale(.8)";
 
-
-            setTimeout(function () {
+            setTimeout(() => {
 
                 openLetterBtn.style.display = "none";
 
+                // Show Letter
+                letter.classList.remove("hidden");
 
-                // Show letter
-                if (letter) {
+                letter.scrollIntoView({
 
-                    letter.classList.remove("hidden");
+                    behavior: "smooth",
 
+                    block: "center"
 
-                    // Scroll to letter
-                    setTimeout(function () {
-
-                        letter.scrollIntoView({
-
-                            behavior: "smooth",
-
-                            block: "center"
-
-                        });
-
-                    }, 200);
-
-                }
+                });
 
             }, 350);
 
@@ -181,55 +145,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
     // ==========================================
-    // SHOW ENDING AFTER READING
+    // SHOW FINAL MESSAGE
     // ==========================================
 
     if (letter && ending) {
 
-        const observer =
-            new IntersectionObserver(
-                function (entries) {
+        const observer = new IntersectionObserver((entries) => {
 
-                    entries.forEach(function (entry) {
+            entries.forEach(entry => {
 
-                        if (entry.isIntersecting) {
+                if (entry.isIntersecting) {
 
-                            setTimeout(function () {
+                    setTimeout(() => {
 
-                                ending.classList.remove(
-                                    "hidden"
-                                );
+                        ending.classList.remove("hidden");
 
-                            }, 1800);
+                        ending.scrollIntoView({
 
-                        }
+                            behavior: "smooth",
 
-                    });
+                            block: "center"
 
-                },
-                {
-                    threshold: 0.35
+                        });
+
+                    }, 2000);
+
                 }
-            );
+
+            });
+
+        }, {
+
+            threshold: 0.4
+
+        });
 
         observer.observe(letter);
 
     }
 
-
     // ==========================================
-    // PHOTO GENTLE EFFECT
+    // PHOTO ANIMATION
     // ==========================================
 
-    const photos =
-        document.querySelectorAll(".polaroid");
+    document.querySelectorAll(".polaroid").forEach((photo, index) => {
 
-    photos.forEach(function (photo, index) {
-
-        photo.style.animationDelay =
-            (index * 0.2) + "s";
+        photo.style.animationDelay = (index * 0.2) + "s";
 
     });
 
