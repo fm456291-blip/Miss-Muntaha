@@ -1,6 +1,6 @@
 /* ==========================================
    PAGE 3 — BIRTHDAY LETTER
-   Miss Muntaha 🌷
+   MISS MUNTAHA 🌷
 ========================================== */
 
 * {
@@ -72,8 +72,7 @@ body {
 
     color: rgba(255, 213, 226, .65);
 
-    animation:
-        flowerFloat linear infinite;
+    animation: flowerFloat linear infinite;
 
     opacity: 0;
 }
@@ -139,7 +138,6 @@ body {
         opacity: 1;
         transform: scale(1.5);
     }
-
 }
 
 
@@ -155,9 +153,7 @@ body {
     width: 100%;
     min-height: 100vh;
 
-    padding:
-        80px 25px
-        120px;
+    padding: 80px 25px 120px;
 
     text-align: center;
 }
@@ -171,9 +167,7 @@ body {
 
     max-width: 950px;
 
-    margin:
-        0 auto
-        50px;
+    margin: 0 auto 50px;
 
     animation: fadeDown 1.2s ease;
 }
@@ -193,12 +187,9 @@ body {
 
 .birthday-heading h1 {
 
-    font-family:
-        'Cormorant Garamond',
-        serif;
+    font-family: 'Cormorant Garamond', serif;
 
-    font-size:
-        clamp(3rem, 7vw, 6rem);
+    font-size: clamp(3rem, 7vw, 6rem);
 
     line-height: 1;
 
@@ -208,7 +199,6 @@ body {
 
     text-shadow:
         0 0 35px rgba(232, 183, 132, .25);
-
 }
 
 .birthday-heading h1 span {
@@ -218,7 +208,6 @@ body {
     margin-top: 12px;
 
     color: #e9b77e;
-
 }
 
 .intro-line {
@@ -245,9 +234,7 @@ body {
 
     max-width: 1000px;
 
-    margin:
-        50px auto
-        70px;
+    margin: 50px auto 70px;
 
     display: flex;
 
@@ -262,7 +249,7 @@ body {
 
 
 /* ==========================================
-   POLAROID
+   POLAROIDS
 ========================================== */
 
 .polaroid {
@@ -276,8 +263,7 @@ body {
     box-shadow:
         0 20px 45px rgba(0, 0, 0, .4);
 
-    transition:
-        .5s ease;
+    transition: .5s ease;
 
     position: relative;
 }
@@ -349,7 +335,7 @@ body {
 
 
 /* ==========================================
-   LETTER BUTTON
+   OPEN LETTER BUTTON
 ========================================== */
 
 #openLetter {
@@ -366,8 +352,7 @@ body {
 
     color: white;
 
-    padding:
-        18px 40px;
+    padding: 18px 40px;
 
     border-radius: 50px;
 
@@ -396,45 +381,45 @@ body {
 
 
 /* ==========================================
-   LETTER
+   BIRTHDAY BLESSINGS LETTER
 ========================================== */
 
 .letter-area {
 
     max-width: 850px;
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 }
 
 .letter {
 
     margin-top: 40px;
 
-    padding: 45px;
+    padding: 50px 45px;
 
     text-align: left;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255, 248, 242, .97),
-            rgba(247, 228, 218, .97)
+            rgba(255, 248, 242, .98),
+            rgba(247, 228, 218, .98)
         );
 
     color: #3b202d;
 
-    border-radius: 8px;
+    border-radius: 12px;
 
     box-shadow:
-        0 30px 80px
-        rgba(0, 0, 0, .5);
+        0 30px 80px rgba(0, 0, 0, .5);
 
     position: relative;
 
-    animation:
-        letterOpen .9s ease;
+    animation: letterOpen .9s ease;
 }
+
+
+/* Elegant inner border */
 
 .letter::before {
 
@@ -442,26 +427,56 @@ body {
 
     position: absolute;
 
-    inset: 12px;
+    inset: 13px;
 
     border: 1px solid
         rgba(142, 76, 94, .22);
 
+    border-radius: 6px;
+
     pointer-events: none;
 }
+
+
+/* Small decorative glow */
+
+.letter::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    top: 18px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #c78a5b;
+
+    font-size: 18px;
+
+    background: #f8e9df;
+
+    padding: 0 12px;
+}
+
+
+/* ==========================================
+   LETTER TOP
+========================================== */
 
 .letter-top {
 
     display: flex;
 
-    justify-content:
-        space-between;
+    justify-content: space-between;
 
     align-items: center;
 
     padding-bottom: 20px;
 
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 
     border-bottom:
         1px solid
@@ -473,8 +488,17 @@ body {
         'Cormorant Garamond',
         serif;
 
-    font-size: 21px;
+    font-size: 23px;
+
+    position: relative;
+
+    z-index: 2;
 }
+
+
+/* ==========================================
+   LETTER CONTENT
+========================================== */
 
 .letter-content {
 
@@ -485,15 +509,17 @@ body {
 
 .letter-content h2 {
 
+    text-align: center;
+
     font-family:
         'Cormorant Garamond',
         serif;
 
-    font-size: 40px;
+    font-size: 43px;
 
     color: #713b5d;
 
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .letter-content p {
@@ -502,11 +528,11 @@ body {
         'Cormorant Garamond',
         serif;
 
-    font-size: 21px;
+    font-size: 22px;
 
-    line-height: 1.8;
+    line-height: 1.85;
 
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .letter-content strong {
@@ -514,27 +540,43 @@ body {
     color: #9b4d6c;
 }
 
+
+/* ==========================================
+   SPECIAL FINAL DUA
+========================================== */
+
 .final-wish {
 
-    margin-top: 28px;
+    margin-top: 30px;
 
-    padding:
-        20px 25px;
+    padding: 24px 28px;
 
     background:
-        rgba(169, 79, 112, .08);
+        linear-gradient(
+            135deg,
+            rgba(169, 79, 112, .08),
+            rgba(233, 183, 126, .12)
+        );
 
     border-left:
         4px solid #b86a84;
 
-    border-radius: 5px;
+    border-radius: 7px;
+
+    box-shadow:
+        0 8px 25px rgba(112, 59, 93, .08);
 }
+
+
+/* ==========================================
+   FINAL BIRTHDAY WISH
+========================================== */
 
 .letter-content h3 {
 
     text-align: center;
 
-    margin-top: 35px;
+    margin-top: 40px;
 
     color: #8d4b62;
 
@@ -542,16 +584,25 @@ body {
         'Cormorant Garamond',
         serif;
 
-    font-size: 30px;
+    font-size: 32px;
+
+    line-height: 1.4;
 }
+
+
+/* ==========================================
+   SIGNATURE
+========================================== */
 
 .signature {
 
     text-align: right;
 
-    margin-top: 35px;
+    margin-top: 38px;
 
     color: #805269;
+
+    font-size: 21px !important;
 }
 
 
@@ -563,11 +614,11 @@ body {
 
     max-width: 750px;
 
-    margin:
-        80px auto
-        0;
+    margin: 80px auto 0;
 
-    padding: 30px;
+    padding: 35px;
+
+    text-align: center;
 
     animation: fadeUp 1s ease;
 }
@@ -577,11 +628,13 @@ body {
     color: #d8bdca;
 
     font-size: 18px;
+
+    line-height: 1.7;
 }
 
 .ending h2 {
 
-    margin-top: 12px;
+    margin-top: 15px;
 
     color: #e9b77e;
 
@@ -589,7 +642,18 @@ body {
         'Cormorant Garamond',
         serif;
 
-    font-size: 36px;
+    font-size: 38px;
+
+    line-height: 1.4;
+}
+
+.ending p:last-child {
+
+    margin-top: 18px;
+
+    color: #f3d8df;
+
+    font-size: 20px;
 }
 
 
@@ -616,7 +680,6 @@ body {
         transform:
             translateY(50px)
             scale(.96);
-
     }
 
     to {
@@ -626,9 +689,7 @@ body {
         transform:
             translateY(0)
             scale(1);
-
     }
-
 }
 
 @keyframes fadeDown {
@@ -639,7 +700,6 @@ body {
 
         transform:
             translateY(-30px);
-
     }
 
     to {
@@ -648,9 +708,7 @@ body {
 
         transform:
             translateY(0);
-
     }
-
 }
 
 @keyframes fadeUp {
@@ -661,7 +719,6 @@ body {
 
         transform:
             translateY(30px);
-
     }
 
     to {
@@ -670,9 +727,7 @@ body {
 
         transform:
             translateY(0);
-
     }
-
 }
 
 
@@ -748,29 +803,39 @@ body {
 
     .letter {
 
-        padding: 28px 22px;
+        padding: 38px 22px;
     }
 
     .letter-content h2 {
 
-        font-size: 34px;
+        font-size: 35px;
     }
 
     .letter-content p {
 
         font-size: 19px;
 
-        line-height: 1.7;
+        line-height: 1.75;
     }
 
     .letter-content h3 {
 
-        font-size: 27px;
+        font-size: 28px;
     }
 
     .signature {
 
         text-align: center;
+    }
+
+    .ending {
+
+        padding: 25px 10px;
+    }
+
+    .ending h2 {
+
+        font-size: 31px;
     }
 
 }
@@ -781,6 +846,13 @@ body {
 ========================================== */
 
 @media (max-width: 420px) {
+
+    .birthday-page {
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+    }
 
     .photo-wall {
 
@@ -810,6 +882,33 @@ body {
             16px 20px;
 
         font-size: 15px;
+    }
+
+    .letter {
+
+        padding:
+            35px 18px;
+    }
+
+    .letter::before {
+
+        inset: 8px;
+    }
+
+    .letter-content h2 {
+
+        font-size: 31px;
+    }
+
+    .letter-content p {
+
+        font-size: 18px;
+    }
+
+    .final-wish {
+
+        padding:
+            18px 18px;
     }
 
 }
