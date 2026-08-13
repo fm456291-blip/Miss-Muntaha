@@ -3,6 +3,49 @@
    MISS MUNTAHA 🌷
 ========================================== */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    font-family: 'Poppins', sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(232, 183, 132, .16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(157, 78, 128, .16),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #1b1019,
+            #2a1724,
+            #120b13
+        );
+
+    color: #fff;
+}
+/* ==========================================
+   PAGE 3 — BIRTHDAY LETTER
+   MISS MUNTAHA 🌷
+========================================== */
+
 
 /* ==========================================
    RESET
