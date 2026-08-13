@@ -29,27 +29,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ==========================================
-    // MUSIC
-    // ==========================================
+// MUSIC
+// ==========================================
 
-    if (music) {
+const music = document.getElementById("birthdayMusic");
 
-        music.volume = 0.35;
+if (music) {
 
-        document.addEventListener(
-            "click",
-            function startMusic() {
+    music.volume = 0.35;
 
-                music.play().catch(function () {});
+    document.addEventListener("click", function startMusic() {
 
-            },
-            {
-                once: true
-            }
-        );
+        music.play()
+            .then(function () {
+                console.log("🎵 Music started");
+            })
+            .catch(function (error) {
+                console.log("Music error:", error);
+            });
 
-    }
+    }, { once: true });
 
+}
 
     // ==========================================
     // FLOATING FLOWERS
