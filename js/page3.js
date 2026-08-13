@@ -1,0 +1,255 @@
+// ==========================================
+// PAGE 3 — BIRTHDAY LETTER
+// MISS MUNTAHA 🌷
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const openLetterBtn =
+        document.getElementById("openLetter");
+
+    const letter =
+        document.getElementById("letter");
+
+    const ending =
+        document.getElementById("ending");
+
+    const music =
+        document.getElementById("birthdayMusic");
+
+    const flowers =
+        document.getElementById("flowers");
+
+    const sparkles =
+        document.getElementById("sparkles");
+
+
+    // ==========================================
+    // MUSIC
+    // ==========================================
+
+    if (music) {
+
+        music.volume = 0.35;
+
+        // Music starts after first interaction
+        document.addEventListener(
+            "click",
+            function startMusic() {
+
+                music.play().catch(() => {});
+
+                document.removeEventListener(
+                    "click",
+                    startMusic
+                );
+
+            },
+            { once: true }
+        );
+
+    }
+
+
+    // ==========================================
+    // FLOATING FLOWERS
+    // ==========================================
+
+    if (flowers) {
+
+        const flowerSymbols = [
+            "🌷",
+            "🌸",
+            "✿",
+            "❀",
+            "♡"
+        ];
+
+
+        for (let i = 0; i < 30; i++) {
+
+            const flower =
+                document.createElement("div");
+
+            flower.className =
+                "flower";
+
+            flower.innerHTML =
+                flowerSymbols[
+                    Math.floor(
+                        Math.random() *
+                        flowerSymbols.length
+                    )
+                ];
+
+
+            flower.style.left =
+                Math.random() * 100 + "%";
+
+
+            flower.style.fontSize =
+                (12 + Math.random() * 20) + "px";
+
+
+            flower.style.animationDuration =
+                (8 + Math.random() * 10) + "s";
+
+
+            flower.style.animationDelay =
+                Math.random() * 10 + "s";
+
+
+            flowers.appendChild(flower);
+
+        }
+
+    }
+
+
+    // ==========================================
+    // SPARKLES
+    // ==========================================
+
+    if (sparkles) {
+
+        for (let i = 0; i < 70; i++) {
+
+            const sparkle =
+                document.createElement("div");
+
+            sparkle.className =
+                "sparkle";
+
+
+            sparkle.style.left =
+                Math.random() * 100 + "%";
+
+
+            sparkle.style.top =
+                Math.random() * 100 + "%";
+
+
+            sparkle.style.animationDelay =
+                Math.random() * 3 + "s";
+
+
+            sparkles.appendChild(sparkle);
+
+        }
+
+    }
+
+
+    // ==========================================
+    // OPEN LETTER
+    // ==========================================
+
+    if (openLetterBtn) {
+
+        openLetterBtn.addEventListener(
+            "click",
+            function () {
+
+                // Start music
+                if (music) {
+
+                    music.play().catch(() => {});
+
+                }
+
+
+                // Hide button
+                openLetterBtn.style.opacity = "0";
+
+                openLetterBtn.style.transform =
+                    "scale(.8)";
+
+
+                setTimeout(function () {
+
+                    openLetterBtn.style.display =
+                        "none";
+
+
+                    // Show letter
+                    letter.classList.remove(
+                        "hidden"
+                    );
+
+
+                    // Scroll to letter
+                    setTimeout(function () {
+
+                        letter.scrollIntoView({
+
+                            behavior: "smooth",
+
+                            block: "center"
+
+                        });
+
+                    }, 200);
+
+
+                }, 350);
+
+            }
+        );
+
+    }
+
+
+    // ==========================================
+    // SHOW ENDING AFTER READING
+    // ==========================================
+
+    if (letter && ending) {
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            setTimeout(function () {
+
+                                ending.classList.remove(
+                                    "hidden"
+                                );
+
+                            }, 1800);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.35
+                }
+            );
+
+
+        observer.observe(letter);
+
+    }
+
+
+    // ==========================================
+    // PHOTO GENTLE EFFECT
+    // ==========================================
+
+    const photos =
+        document.querySelectorAll(".polaroid");
+
+
+    photos.forEach(function (photo, index) {
+
+        photo.style.animationDelay =
+            (index * 0.2) + "s";
+
+    });
+
+});

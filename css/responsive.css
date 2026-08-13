@@ -1,0 +1,64 @@
+@media(max-width:900px){
+
+.section{
+
+padding:40px 20px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+h1{
+
+font-size:2.4rem;
+
+}
+
+p{
+
+font-size:1rem;
+
+}
+
+}
+@media(max-width:600px){
+
+    .page-one{
+        padding:50px 18px;
+    }
+
+    .small-title{
+        letter-spacing:3px;
+        font-size:11px;
+    }
+
+    .page-one h1{
+        font-size:2.5rem;
+    }
+
+    .intro-text{
+        font-size:1rem;
+    }
+
+    .message-card{
+        padding:25px 20px;
+    }
+
+    .message-card p{
+        font-size:.95rem;
+    }
+
+    .sparkle{
+        right:8%;
+        top:8%;
+    }
+
+    #musicBtn,
+    #nextBtn{
+        width:90%;
+        max-width:300px;
+    }
+
+}

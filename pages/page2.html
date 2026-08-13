@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Heart Game ❤️</title>
+
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+<link rel="stylesheet" href="../css/page2.css">
+
+</head>
+
+<body>
+
+<!-- Background Hearts -->
+<div id="heartBackground"></div>
+
+<!-- Music -->
+<audio id="pageMusic" loop>
+    <source src="../assets/music/piano2.mp3" type="audio/mpeg">
+</audio>
+
+
+<main class="game-page">
+
+    <p class="eyebrow">
+        A LITTLE CHALLENGE FOR YOU ❤️
+    </p>
+
+    <h1>
+        Can You Put The Heart Together?
+    </h1>
+
+    <p class="intro-text">
+        Some things are beautiful only when<br>
+        every little piece finds its place. 🌹
+    </p>
+
+
+    <!-- Game -->
+
+    <div class="heart-game">
+
+        <div id="puzzle"></div>
+
+    </div>
+
+
+    <p id="gameMessage">
+        Click two pieces to swap them. 💕
+    </p>
+
+
+    <!-- Success -->
+
+    <div id="successBox" class="hidden">
+
+        <div class="success-heart">
+            ❤️
+        </div>
+
+        <h2>
+            You Did It! ✨
+        </h2>
+
+        <p>
+            See? Even the most complicated things<br>
+            become easy when you don't give up. ❤️
+        </p>
+
+        <button id="nextBtn">
+            Continue The Journey →
+        </button>
+
+    </div>
+
+</main>
+
+
+<script src="../js/page2.js"></script>
+
+</body>
+</html>

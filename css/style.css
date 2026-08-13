@@ -1,0 +1,777 @@
+/* ==========================================
+   INDEX PAGE — MISS MUNTAHA
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(244, 114, 182, .20), transparent 30%),
+        radial-gradient(circle at 85% 75%, rgba(167, 139, 250, .20), transparent 30%),
+        linear-gradient(135deg, #160b24, #090b20 55%, #120b2b);
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    padding: 50px 20px;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================
+   GLASS CARD
+========================================== */
+
+.glass-card {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(850px, 92%);
+
+    padding: 65px 55px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background: rgba(255, 255, 255, .08);
+
+    border: 1px solid rgba(255, 255, 255, .18);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, .45),
+        0 0 60px rgba(244, 114, 182, .10);
+
+}
+
+
+/* ==========================================
+   EYEBROW
+========================================== */
+
+.eyebrow {
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #f9a8d4;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.glass-card h1 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+
+    line-height: 1.05;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f9a8d4,
+        #c4b5fd
+    );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    margin-bottom: 30px;
+
+}
+
+.glass-card h1 span {
+
+    color: #f472b6;
+
+    -webkit-text-fill-color: #f472b6;
+
+}
+
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.hero-text {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 1.35rem;
+
+    line-height: 1.8;
+
+    color: #fce7f3;
+
+}
+
+.small-text {
+
+    max-width: 600px;
+
+    margin: 18px auto 40px;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    color: #cbd5e1;
+
+}
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+#startBtn {
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    padding: 17px 38px;
+
+    border-radius: 999px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #ec4899,
+        #a855f7
+    );
+
+    box-shadow:
+        0 10px 30px rgba(236, 72, 153, .30);
+
+    transition: .35s ease;
+
+}
+
+#startBtn:hover {
+
+    transform: translateY(-5px) scale(1.04);
+
+    box-shadow:
+        0 15px 40px rgba(236, 72, 153, .50);
+
+}
+
+
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+#hearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+
+}
+
+.heart {
+
+    position: absolute;
+
+    bottom: -40px;
+
+    font-size: 18px;
+
+    opacity: .6;
+
+    animation: floatHeart linear infinite;
+
+}
+
+
+/* ==========================================
+   HEART ANIMATION
+========================================== */
+
+@keyframes floatHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.8);
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: .7;
+
+    }
+
+    85% {
+
+        opacity: .7;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(25deg)
+            scale(1.2);
+
+        opacity: 0;
+
+    }
+
+}
+/* ==========================================
+   PAGE 1 - MISS MUNTAHA
+========================================== */
+
+body{
+    margin:0;
+    min-height:100vh;
+    height:auto;
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(190,80,180,.18), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(110,80,220,.18), transparent 30%),
+        linear-gradient(135deg,#160d24,#09091e 55%,#110b25);
+
+    color:white;
+}
+
+#stars{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+}
+
+.page-one{
+    position:relative;
+    z-index:2;
+    width:100%;
+}
+
+/* ---------- HERO ---------- */
+
+.hero-section{
+    min-height:100vh;
+    padding:100px 25px 80px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.eyebrow{
+    color:#f5b9ef;
+    letter-spacing:7px;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.hero-section h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(48px,7vw,90px);
+    line-height:1;
+    margin:0;
+    color:#fff0fc;
+
+    text-shadow:
+        0 0 30px rgba(245,170,235,.25);
+}
+
+.hero-section h1 span{
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #f4b5ed,
+        #c9b6ff
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-text{
+    max-width:700px;
+    margin:35px auto 0;
+
+    font-size:20px;
+    line-height:1.9;
+    color:#d9d2e8;
+}
+
+.scroll-hint{
+    margin-top:70px;
+    color:#d9a8e8;
+    font-size:14px;
+    letter-spacing:3px;
+    animation:scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse{
+
+    0%,100%{
+        opacity:.35;
+        transform:translateY(0);
+    }
+
+    50%{
+        opacity:1;
+        transform:translateY(8px);
+    }
+
+}
+
+
+/* ---------- PHOTO SECTION ---------- */
+
+.photo-section{
+    min-height:100vh;
+    padding:100px 25px;
+
+    text-align:center;
+}
+
+.section-label{
+    color:#e7a8df;
+    letter-spacing:5px;
+    font-size:13px;
+}
+
+.photo-section h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:55px;
+    margin:10px 0 70px;
+}
+
+
+/* Gallery */
+
+.photo-gallery{
+    width:min(1000px,95%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+
+    align-items:center;
+}
+
+.photo-card{
+    background:#fff;
+    padding:10px 10px 25px;
+
+    border-radius:8px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.5),
+        0 0 30px rgba(220,150,240,.12);
+
+    transition:.5s ease;
+}
+
+.photo-card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    display:block;
+    border-radius:4px;
+}
+
+.photo-one{
+    transform:rotate(-7deg);
+}
+
+.photo-two{
+    transform:rotate(5deg) translateY(25px);
+}
+
+.photo-three{
+    transform:rotate(-4deg);
+}
+
+.photo-four{
+    transform:rotate(7deg) translateY(25px);
+}
+
+.photo-card:hover{
+    transform:rotate(0deg) translateY(-15px) scale(1.06);
+    z-index:10;
+}
+
+
+/* ---------- LETTER ---------- */
+
+.letter-section{
+    min-height:100vh;
+
+    padding:120px 20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.letter-card{
+    width:min(850px,95%);
+
+    padding:65px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,190,240,.18);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.4),
+        0 0 50px rgba(190,100,220,.1);
+
+    text-align:center;
+}
+
+.letter-small{
+    color:#e9a9e3;
+    letter-spacing:5px;
+    font-size:13px;
+}
+
+.letter-card h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:52px;
+    line-height:1.1;
+    margin:25px 0 45px;
+
+    color:#ffe8fa;
+}
+
+.letter-text{
+    text-align:left;
+}
+
+.letter-text p{
+    color:#ddd6e8;
+    font-size:19px;
+    line-height:2;
+    margin:0 0 28px;
+}
+
+.letter-text strong{
+    color:#f4b7eb;
+}
+
+.final-line{
+    text-align:center;
+    color:#f2c9ee !important;
+    font-size:21px !important;
+    margin-top:50px !important;
+}
+
+
+/* ---------- NEXT BUTTON ---------- */
+
+.page-navigation{
+    padding:40px 20px 100px;
+
+    display:flex;
+    justify-content:center;
+}
+
+.nav-btn{
+    display:inline-block;
+
+    padding:18px 38px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a855c7,
+            #7067e8
+        );
+
+    box-shadow:
+        0 10px 35px rgba(160,90,220,.35);
+
+    transition:.35s;
+}
+
+.nav-btn:hover{
+    transform:translateY(-5px) scale(1.03);
+
+    box-shadow:
+        0 15px 45px rgba(190,100,240,.55);
+}
+
+
+/* ---------- MUSIC ---------- */
+
+#musicBtn{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:52px;
+    height:52px;
+
+    border:none;
+    border-radius:50%;
+
+    cursor:pointer;
+
+    z-index:100;
+
+    color:white;
+
+    font-size:20px;
+
+    background:linear-gradient(
+        135deg,
+        #a855c7,
+        #7067e8
+    );
+
+    box-shadow:0 0 25px rgba(180,100,240,.5);
+}
+
+
+/* ---------- GLOW ---------- */
+
+.glow{
+    position:fixed;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    filter:blur(100px);
+    pointer-events:none;
+    z-index:0;
+}
+
+.glow-one{
+    top:10%;
+    left:-150px;
+    background:rgba(220,80,190,.12);
+}
+
+.glow-two{
+    right:-150px;
+    bottom:10%;
+    background:rgba(100,80,240,.12);
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:800px){
+
+    .hero-section{
+        min-height:100svh;
+        padding:80px 20px 60px;
+    }
+
+    .eyebrow{
+        letter-spacing:4px;
+        font-size:11px;
+    }
+
+    .hero-text{
+        font-size:17px;
+    }
+
+    .photo-gallery{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+
+    .photo-card img{
+        height:230px;
+    }
+
+    .photo-two,
+    .photo-four{
+        transform:none;
+    }
+
+    .photo-one,
+    .photo-three{
+        transform:none;
+    }
+
+    .letter-card{
+        padding:40px 25px;
+    }
+
+    .letter-card h2{
+        font-size:40px;
+    }
+
+    .letter-text p{
+        font-size:17px;
+        line-height:1.8;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .photo-gallery{
+        grid-template-columns:1fr;
+        width:280px;
+    }
+
+    .photo-card img{
+        height:330px;
+    }
+
+    .photo-section h2{
+        font-size:43px;
+    }
+
+    .letter-card h2{
+        font-size:35px;
+    }
+
+    .hero-section h1{
+        font-size:48px;
+    }
+
+}
+/* ==========================================
+   Continue Journey Button
+========================================== */
+
+.begin-letter-btn{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:16px 38px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-family:var(--font-main);
+
+    font-size:1.05rem;
+
+    font-weight:500;
+
+    background:linear-gradient(
+        135deg,
+        #c084fc,
+        #60a5fa
+    );
+
+    box-shadow:
+        0 0 20px rgba(192,132,252,.35),
+        0 0 35px rgba(96,165,250,.20);
+
+    transition:.4s ease;
+
+}
+
+.begin-letter-btn:hover{
+
+    transform:translateY(-5px) scale(1.04);
+
+    box-shadow:
+        0 0 30px rgba(192,132,252,.65),
+        0 0 50px rgba(96,165,250,.45);
+
+}
