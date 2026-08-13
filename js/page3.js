@@ -3,7 +3,13 @@
 // MISS MUNTAHA 🌷
 // ==========================================
 
+
 document.addEventListener("DOMContentLoaded", function () {
+
+
+    // ==========================================
+    // ELEMENTS
+    // ==========================================
 
     const openLetterBtn =
         document.getElementById("openLetter");
@@ -25,20 +31,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ==========================================
-    // MUSIC
+    // BACKGROUND MUSIC
     // ==========================================
 
     if (music) {
 
         music.volume = 0.35;
 
+
+        function startMusic() {
+
+            music.play().catch(function () {});
+
+        }
+
+
         document.addEventListener(
             "click",
-            function startMusic() {
-
-                music.play().catch(() => {});
-
-            },
+            startMusic,
             { once: true }
         );
 
@@ -52,19 +62,27 @@ document.addEventListener("DOMContentLoaded", function () {
     if (flowers) {
 
         const flowerSymbols = [
+
             "🌷",
             "🌸",
             "✿",
             "❀",
+            "💮",
             "♡"
+
         ];
 
-        for (let i = 30; i--;) {
+
+        for (let i = 0; i < 35; i++) {
+
 
             const flower =
                 document.createElement("div");
 
-            flower.className = "flower";
+
+            flower.className =
+                "flower";
+
 
             flower.innerHTML =
                 flowerSymbols[
@@ -74,19 +92,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     )
                 ];
 
+
             flower.style.left =
                 Math.random() * 100 + "%";
 
+
             flower.style.fontSize =
-                (12 + Math.random() * 20) + "px";
+                (15 + Math.random() * 15) + "px";
+
 
             flower.style.animationDuration =
-                (8 + Math.random() * 10) + "s";
+                (8 + Math.random() * 8) + "s";
+
 
             flower.style.animationDelay =
-                Math.random() * 10 + "s";
+                Math.random() * 8 + "s";
+
 
             flowers.appendChild(flower);
+
         }
 
     }
@@ -98,21 +122,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (sparkles) {
 
-        for (let i = 70; i--;) {
+
+        for (let i = 0; i < 70; i++) {
+
 
             const sparkle =
                 document.createElement("div");
 
-            sparkle.className = "sparkle";
+
+            sparkle.className =
+                "sparkle";
+
 
             sparkle.style.left =
                 Math.random() * 100 + "%";
 
+
             sparkle.style.top =
                 Math.random() * 100 + "%";
 
+
             sparkle.style.animationDelay =
                 Math.random() * 3 + "s";
+
 
             sparkles.appendChild(sparkle);
 
@@ -127,36 +159,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (openLetterBtn && letter) {
 
+
         openLetterBtn.addEventListener(
             "click",
             function () {
 
+
+                // Start music
                 if (music) {
-                    music.play().catch(() => {});
+
+                    music.play().catch(
+                        function () {}
+                    );
+
                 }
 
-                openLetterBtn.style.opacity = "0";
+
+                // Button animation
+
+                openLetterBtn.style.opacity =
+                    "0";
 
                 openLetterBtn.style.transform =
                     "scale(.8)";
 
-                setTimeout(function () {
 
-                    openLetterBtn.style.display =
-                        "none";
+                setTimeout(
+                    function () {
 
-                    letter.classList.remove("hidden");
 
-                    setTimeout(function () {
+                        // Hide button
 
-                        letter.scrollIntoView({
-                            behavior: "smooth",
-                            block: "center"
-                        });
+                        openLetterBtn.style.display =
+                            "none";
 
-                    }, 200);
 
-                }, 350);
+                        // Show letter
+
+                        letter.classList.remove(
+                            "hidden"
+                        );
+
+
+                        // Scroll to letter
+
+                        setTimeout(
+                            function () {
+
+                                letter.scrollIntoView({
+
+                                    behavior: "smooth",
+
+                                    block: "center"
+
+                                });
+
+                            },
+                            200
+                        );
+
+
+                    },
+                    350
+                );
 
             }
         );
@@ -165,36 +230,61 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ==========================================
-    // FINAL MESSAGE
+    // SHOW FINAL MESSAGE
     // ==========================================
 
     if (letter && ending) {
 
+
         const observer =
             new IntersectionObserver(
+
                 function (entries) {
 
-                    entries.forEach(function (entry) {
 
-                        if (entry.isIntersecting) {
+                    entries.forEach(
+                        function (entry) {
 
-                            setTimeout(function () {
 
-                                ending.classList.remove(
-                                    "hidden"
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+
+                                setTimeout(
+                                    function () {
+
+
+                                        ending.classList.remove(
+                                            "hidden"
+                                        );
+
+
+                                    },
+                                    1800
                                 );
 
-                            }, 1500);
+
+                                observer.unobserve(
+                                    letter
+                                );
+
+                            }
 
                         }
-
-                    });
+                    );
 
                 },
+
+
                 {
+
                     threshold: 0.35
+
                 }
+
             );
+
 
         observer.observe(letter);
 
@@ -206,13 +296,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==========================================
 
     const photos =
-        document.querySelectorAll(".polaroid");
+        document.querySelectorAll(
+            ".polaroid"
+        );
 
-    photos.forEach(function (photo, index) {
 
-        photo.style.animationDelay =
-            (index * 0.2) + "s";
+    photos.forEach(
+        function (photo, index) {
 
-    });
+            photo.style.animationDelay =
+                (index * 0.2) + "s";
+
+        }
+    );
+
 
 });
